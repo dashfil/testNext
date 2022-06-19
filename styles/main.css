@@ -1,0 +1,23 @@
+.allCards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  list-style-type: none;
+}
+.pagiButton {
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin: 5px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
