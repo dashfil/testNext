@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 export default function PostCard({post}) {
   return (
-    <Card sx={{ maxWidth: 275,margin: 10 }} >
+    <Card sx={{ minWidth:275,maxWidth: 275,margin: 10 }} >
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
          {post.category}
