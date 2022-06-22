@@ -43,9 +43,17 @@ function index() {
        }
   }, [state?.user, currentPage])
   
-    const pageNumbers = Math.floor(allPosts / cardsPerPage);
+       const pageNumbers = [];
+    for (let i = 1; i <= Math.floor(allPosts / cardsPerPage); i++) {
+      pageNumbers.push(i);
+    }
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
-    const plus = (plusNumbet) => setCurrentPage((prevState) => pageNumbers > prevState ? prevState += plusNumbet : prevState)
+    const plus = (plusNumbet) => setCurrentPage((prevState) => pageNumbers.length > prevState ? prevState += plusNumbet : prevState)
+    const backPagination = () => setCurrentPage((prevState) => prevState > 1 ? prevState -= 1 : prevState)
+    const nextPagination = () => setCurrentPage((prevState) => pageNumbers.length > prevState ? prevState += 1 : prevState)
+    const firstPage = () => setCurrentPage(1);
+    const lastPage = () => setCurrentPage(pageNumbers.length);
+ 
     
 
   return (
@@ -61,6 +69,10 @@ function index() {
         paginate={paginate}
         plus={plus}
         currentPage={currentPage}
+        backPagination={backPagination}
+        nextPagination={nextPagination}
+        firstPage={firstPage}
+        lastPage={lastPage}
       /> 
       </>} 
     </MainLayout>
